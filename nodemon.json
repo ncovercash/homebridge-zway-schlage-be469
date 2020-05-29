@@ -1,5 +1,5 @@
 {
 	"watch": ["src/*"],
 	"ignore": [],
-	"exec": "tsc --listEmittedFiles && homebridge -I -D"
+	"exec": "tsc --listEmittedFiles && node --inspect ./node_modules/.bin/homebridge -I -D -P ."
 }
