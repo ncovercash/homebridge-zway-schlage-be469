@@ -1,0 +1,5 @@
+{
+	"watch": ["src/*"],
+	"ignore": [],
+	"exec": "tsc --listEmittedFiles && homebridge -I -D"
+}
