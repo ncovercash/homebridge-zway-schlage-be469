@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"incremental": true,
+		"lib": ["es6"],
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"outDir": "./dist/",
+		"rootDir": "./src/",
+		"sourceMap": true,
+		"strict": true,
+		"target": "es2018"
+	},
+	"exclude": ["./dist"]
+}

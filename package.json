@@ -1,0 +1,58 @@
+{
+	"displayName": "Z-Way Schlage BE469",
+	"name": "homebridge-zway-schlage",
+	"author": "ncovercash",
+	"version": "1.0.0",
+	"description": "Learning experience to implement a z-way plugin for my home system with Schalge BE469's.",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ncovercash/homebridge-zway-schlage-be469.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ncovercash/homebridge-zway-schlage-be469/issues"
+	},
+	"main": "dist/index.js",
+	"keywords": [
+		"homebridge-plugin"
+	],
+	"lint-staged": {
+		"src/*.{js,ts}": [
+			"prettier --write",
+			"eslint"
+		],
+		"*.{json}": [
+			"prettier --write"
+		]
+	},
+	"dependencies": {
+		"@types/node": "^14.0.5",
+		"axios": "^0.19.2"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^3.0.2",
+		"@typescript-eslint/parser": "^3.0.2",
+		"eslint": "^7.1.0",
+		"homebridge": "^1.1.0",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.6",
+		"nodemon": "*",
+		"prettier": "^2.0.5",
+		"typescript": "^3.9.3"
+	},
+	"scripts": {
+		"build": "npm run clean && tsc --listEmittedFiles",
+		"watch": "npm run clean && tsc --listEmittedFiles",
+		"clean": "touch tsconfig.tsbuildinfo && rm tsconfig.tsbuildinfo && mkdir -p dist/tmp && rm -r dist",
+		"lint": "prettier --write 'src/*.{js,ts,json}' '*.json'",
+		"prepublishOnly": "npm run build",
+		"postpublish": "npm run clean",
+		"postinstall": "npm run build"
+	},
+	"husky": {
+		"hooks": {
+			"post-merge": "npm ci",
+			"pre-commit": "lint-staged && npm run build"
+		}
+	}
+}
