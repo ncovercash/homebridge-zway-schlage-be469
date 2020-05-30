@@ -4,17 +4,24 @@ export interface ZWaySchlageBe469Config extends PlatformConfig {
 	user: string;
 	pass: string;
 	host: string;
+	ignore: number[];
+	nuke?: any;
 }
 
 export interface Be469Device {
 	nodeId: number;
 	commandClasses: {
-		alarm: { instance: number };
+		configuration: { instance: number };
 		battery: { instance: number };
 		doorLock: { instance: number };
 	};
 	lastState: Device;
 }
+
+export const ConfigurationOptions: Record<string, number> = {
+	Beeper: 0x03,
+	VacationMode: 0x04,
+};
 
 export enum CommandClassIds {
 	NoOperation = "0",
@@ -148,6 +155,8 @@ type CommandClassData = {
 	lastChange: APIValue;
 	history: APIValue;
 	last: APIValue;
+	invalidTime: number;
+	updateTime: number;
 };
 
 export interface CommandClass {
@@ -164,20 +173,7 @@ export interface SpecialCommandClassIntermediate<N extends string, T extends str
 		};
 }
 
-export type AlarmCommandClass = SpecialCommandClassIntermediate<
-	"DoorLock",
-	| "mode"
-	| "insideMode"
-	| "outsideMode"
-	| "lockMinutes"
-	| "lockSeconds"
-	| "condition"
-	| "insideState"
-	| "outsideState"
-	| "timeoutMinutes"
-	| "timeoutSeconds"
-	| "opType"
->;
+export type ConfigurationCommandClass = SpecialCommandClassIntermediate<"Configuration", "3" | "4">;
 export type BatteryCommandClass = SpecialCommandClassIntermediate<"Battery", never>;
 export type DoorLockCommandClass = SpecialCommandClassIntermediate<
 	"DoorLock",
