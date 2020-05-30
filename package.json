@@ -51,8 +51,7 @@
 		"watch": "npm run clean && nodemon",
 		"clean": "touch tsconfig.tsbuildinfo && rm tsconfig.tsbuildinfo && mkdir -p dist/tmp && rm -r dist",
 		"lint": "prettier --write 'src/*.{js,ts,json}' '*.json'",
-		"prepublishOnly": "npm run build",
-		"postinstall": "npm run build"
+		"prepublishOnly": "npm run build"
 	},
 	"husky": {
 		"hooks": {
