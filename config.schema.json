@@ -1,0 +1,36 @@
+{
+	"pluginAlias": "Schalge BE469",
+	"pluginType": "platform",
+	"singular": true,
+	"schema": {
+		"type": "object",
+		"properties": {
+			"host": {
+				"title": "Host",
+				"type": "string",
+				"default": "http://127.0.0.1:8083/",
+				"required": true
+			},
+			"user": {
+				"title": "User",
+				"type": "string",
+				"default": "admin",
+				"required": true
+			},
+			"pass": {
+				"title": "Password",
+				"type": "string",
+				"required": true
+			},
+			"ignore": {
+				"title": "Ignore node IDs",
+				"type": "array",
+				"items": {
+					"title": "Node ID",
+					"type": "integer"
+				},
+				"required": false
+			}
+		}
+	}
+}
