@@ -43,7 +43,7 @@ export = (api: API) => {
 
 // seconds
 const UPDATE_TOLERANCES = {
-	doorLock: 5,
+	doorLock: 7,
 	battery: 86400, // 1 day
 	configuration: 86400,
 };
@@ -621,7 +621,7 @@ class ZWaySchlageBe469 implements DynamicPlatformPlugin {
 			}
 			// this one already exists in pending pile
 			if (this.pendingQueries[pendingQueryKey] >= request.time) {
-				if (currentTime - request.time >= 100) {
+				if (currentTime - this.pendingQueries[pendingQueryKey] >= 100) {
 					this.log("This request has been waiting over 100 seconds with no update, retrying");
 				} else {
 					return; // already waiting
