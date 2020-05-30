@@ -64,6 +64,7 @@ class ZWaySchlageBe469 implements DynamicPlatformPlugin {
 		pass: string;
 		nuke: boolean;
 		ignore: number[];
+		toPoll: number[];
 	};
 
 	protected session: string | null = null;
@@ -82,7 +83,14 @@ class ZWaySchlageBe469 implements DynamicPlatformPlugin {
 			user: (config as ZWaySchlageBe469Config).user,
 			pass: (config as ZWaySchlageBe469Config).pass,
 			nuke: (config as ZWaySchlageBe469Config).nuke !== undefined,
-			ignore: (config as ZWaySchlageBe469Config).ignore,
+			ignore:
+				(config as ZWaySchlageBe469Config).ignore === undefined
+					? []
+					: (config as ZWaySchlageBe469Config).ignore,
+			toPoll:
+				(config as ZWaySchlageBe469Config).toPoll === undefined
+					? []
+					: (config as ZWaySchlageBe469Config).toPoll,
 		};
 
 		log.info("Finished initializing!");
@@ -568,6 +576,9 @@ class ZWaySchlageBe469 implements DynamicPlatformPlugin {
 		const currentTime = response.data.updateTime;
 
 		Object.values(this.locks).forEach((lock) => {
+			if (!this.config.toPoll.includes(lock.nodeId)) {
+				return;
+			}
 			if (
 				currentTime - this.accessories[lock.nodeId].context.lastConfigurationUpdate >
 				UPDATE_TOLERANCES.configuration

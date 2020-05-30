@@ -5,6 +5,7 @@ export interface ZWaySchlageBe469Config extends PlatformConfig {
 	pass: string;
 	host: string;
 	ignore: number[];
+	toPoll: number[];
 	nuke?: any;
 }
 

@@ -30,6 +30,15 @@
 					"type": "integer"
 				},
 				"required": false
+			},
+			"toPoll": {
+				"title": "Node IDs to poll for changes (if lifeline associations are broken)",
+				"type": "array",
+				"items": {
+					"title": "Node ID",
+					"type": "integer"
+				},
+				"required": false
 			}
 		}
 	}

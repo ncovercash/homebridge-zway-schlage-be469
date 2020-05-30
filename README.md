@@ -28,6 +28,8 @@ Add the following to the Homebridge `config.json`:
             "host": "http://your.host.here:port/",
             "user": "admin",
             "pass": "your-password-here",
+            "ignore": [ nodes, to, ignore ],
+            "toPoll": [ nodes, to, poll ]
         }
         ...
     ]
@@ -39,3 +41,5 @@ Add the following to the Homebridge `config.json`:
 * `host`: the IP/hostname of your Z-Way server and its port.  Be sure to add a trailing slash
 * `user`: the username for the Z-Way instance
 * `pass`: the password for the Z-Way instance
+* `ignore`: Schlage lock nodes to ignore
+* `toPoll`: nodes which should be polled for new information (e.g. association/lifeline is broken)
