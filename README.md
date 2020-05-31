@@ -7,6 +7,8 @@ In my personal usage, I used a [RaZberry](https://smile.amazon.com/dp/B01M3Q764U
 
 I have two models: the newer BE469ZP and the older (regular?) BE469.  I'm not too sure what the defining characteristics are, however, the newer one has a dedicated Z-Wave enroll/unenroll button inside the cover and supports S2 Access.
 
+For some reason, I had lots of issues with BE469ZP's association/lifeline settings.  However, on the regular BE469 I have I was able to setup Niffler within the Z-Way server and polling was no longer needed.
+
 ## Installation
 Install this plugin using `npm i -g homebridge-zway-schlage-be469`.
 
