@@ -43,7 +43,7 @@ export = (api: API) => {
 
 // seconds
 const UPDATE_TOLERANCES = {
-	doorLock: 7,
+	doorLock: 600,
 	battery: 86400, // 1 day
 	configuration: 86400,
 };
