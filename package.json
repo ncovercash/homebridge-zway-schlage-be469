@@ -44,7 +44,7 @@
 		"lint-staged": "10.2.8",
 		"nodemon": "2.0.4",
 		"prettier": "2.0.5",
-		"typescript": "3.9.3"
+		"typescript": "3.9.5"
 	},
 	"scripts": {
 		"build": "tsc --listEmittedFiles",
