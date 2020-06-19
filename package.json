@@ -3,7 +3,7 @@
 	"name": "homebridge-zway-schlage",
 	"author": "ncovercash",
 	"version": "1.1.1",
-	"description": "Learning experience to implement a z-way plugin for my home system with Schalge BE469's.",
+	"description": "SCHLAGE BE469 ONLY! Learning experience to implement a z-way plugin for my home system with Schalge BE469's.",
 	"license": "Apache-2.0",
 	"repository": {
 		"type": "git",
