@@ -315,6 +315,7 @@ class ZWaySchlageBe469 implements DynamicPlatformPlugin {
 			) {
 				this.log("Identified this as a lock to be served by this platform");
 			} else {
+				this.log("This plugin will ignore this device (as this plugin only supports the Schlage BE469).");
 				return;
 			}
 
