@@ -1,6 +1,6 @@
 # homebridge-zway-schlage-be469
 
-A homebridge plugin to interact with a Z-Way server.  I mostly built this as a learning experience and found the existing Z-Way Homebridge plugin to not be quite what I was looking for.
+A homebridge plugin to interact with Schlage BE469 locks through a Z-Way server.  I mostly built this as a learning experience and found the existing Z-Way Homebridge plugin to not be quite what I was looking for.
 
 ## My Setup
 In my personal usage, I used a [RaZberry](https://smile.amazon.com/dp/B01M3Q764U/) on a Pi I had laying around.  It worked quite well once I enrolled my devices in the Z-Way dashboard.
